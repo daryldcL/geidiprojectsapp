@@ -1,0 +1,52 @@
+<!--<ion-header>
+    <ion-navbar>
+        <ion-title>Projects</ion-title>
+        <ion-buttons end>
+            <button (click)="add()"><ion-icon name="add"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+    <ion-list>
+        <ion-item-sliding *ngFor="let project of projects; let i = index">
+            <ion-item>
+                <h2>{{ project }}</h2>
+            </ion-item>
+            <ion-item-options>
+                <button item-left (click)="delete(i)">
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Projects</ion-title>
+    <ion-buttons end>
+        <button (click)="signOut()"><ion-icon name="exit"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let project of projects; let i=index">
+      <ion-item>
+        <h2>{{ project }}</h2>
+        <button ion-button item-right (click)="delete(i)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-input type="text" [(ngModel)]="projectItem" placeholder="Enter new project name"></ion-input>
+  <button ion-button item-right (click)="add()">
+    Add
+  </button>
+</ion-content>
